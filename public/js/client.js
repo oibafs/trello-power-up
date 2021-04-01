@@ -292,6 +292,8 @@ var cardButtonCallback = function(t){
 };
 
 // We need to call initialize to get all of our capability handles set up and registered with Trello
+const key = process.env.TRELLOKEY;
+
 TrelloPowerUp.initialize({
   // NOTE about asynchronous responses
   // If you need to make an asynchronous request or action before you can reply to Trello
@@ -529,7 +531,8 @@ TrelloPowerUp.initialize({
     }
   }
 }, {
-  appKey: 'your_key_here',
+  // appKey: 'your_key_here',
+  appKey: key,
   appName: 'My Trello App'
 });
 

@@ -24,8 +24,15 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     
     <!-- Don't forget to add your API key into the script tag for client.js! -->
-    <script src="https://trello.com/1/client.js?key=your_key_here"></script>
-    
+    <!-- <script src="https://trello.com/1/client.js?key=your_key_here"></script> -->
+    <script id="client.js"></script>
+
+    <script>
+      const key = process.env.TRELLOKEY;
+      const url = `https://trello.com/1/client.js?key=${key}`;
+      document.getElementById('client.js').src = url;
+    </script>
+
     <!-- And because we're ALSO doing Power-Up-related things, we still need the Power-Up client library -->
     <script src="https://p.trellocdn.com/power-up.min.js"></script>
     
@@ -36,8 +43,11 @@
         $("code").hide();
         
         // Initialize the Power-Up client library and include your app name and API key
+        const key = process.env.TRELLOKEY;
+        
         var t = window.TrelloPowerUp.iframe({
-          appKey: 'your_key_here',
+          // appKey: 'your_key_here',
+          appKey: key,
           appName: 'My Trello App'
         });
 
