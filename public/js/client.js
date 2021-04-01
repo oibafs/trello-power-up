@@ -292,8 +292,6 @@ var cardButtonCallback = function(t){
 };
 
 // We need to call initialize to get all of our capability handles set up and registered with Trello
-const key = process.env.TRELLOKEY;
-
 TrelloPowerUp.initialize({
   // NOTE about asynchronous responses
   // If you need to make an asynchronous request or action before you can reply to Trello
@@ -514,7 +512,7 @@ TrelloPowerUp.initialize({
     
     // If we want to ask the user to authorize our Power-Up to make full use of the Trello API
     // you'll need to add your API from trello.com/app-key below:
-    let trelloAPIKey = process.env.TRELLOKEY;
+    let trelloAPIKey = '039f30a96f8f3e440addc095dd42f87d';
     // This key will be used to generate a token that you can pass along with the API key to Trello's
     // RESTful API. Using the key/token pair, you can make requests on behalf of the authorized user.
     
@@ -532,7 +530,7 @@ TrelloPowerUp.initialize({
   }
 }, {
   // appKey: 'your_key_here',
-  appKey: key,
+  appKey: '039f30a96f8f3e440addc095dd42f87d',
   appName: 'My Trello App'
 });
 
