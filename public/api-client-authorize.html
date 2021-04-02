@@ -53,7 +53,7 @@
         let makeRequest = (token) => {
           window.Trello.setToken(token);
           try {
-            // window.Trello.members.get('me', success, error)
+            // window.Trello.members.get('me', success, error) 
             window.Trello.cards.get('605a1b2679ba8e7c50b1e441', success, error)
           } catch (err) {
             console.log(err)
